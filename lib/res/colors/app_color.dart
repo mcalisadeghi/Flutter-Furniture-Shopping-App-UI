@@ -13,4 +13,7 @@ class AppColors {
   static Color shadowColor = const Color(
     0xffF3EEEA,
   );
+  static Color redColor = const Color(
+    0xff080032,
+  );
 }

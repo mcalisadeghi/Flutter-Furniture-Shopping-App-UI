@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
+import 'package:flutter_application_1/screen/widget/home_search_widget.dart';
+import 'package:flutter_application_1/screen/widget/shopping_cart_widget.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -35,10 +37,11 @@ class MyHomePage extends StatelessWidget {
                     10.0,
                   ),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        12.0,
-                      ),
-                      color: AppColors.buttonColor),
+                    borderRadius: BorderRadius.circular(
+                      12.0,
+                    ),
+                    color: AppColors.buttonColor,
+                  ),
                   child: Icon(
                     Icons.person,
                     color: AppColors.whiteColor,
@@ -47,48 +50,18 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 35.0,
+              height: 34.0,
             ),
             Row(
               children: [
-                Expanded(
-                  child: Container(
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
-                      borderRadius: BorderRadius.circular(
-                        12.0,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.shadowColor,
-                          spreadRadius: 2.0,
-                          blurRadius: 4.0,
-                          offset: const Offset(
-                            -2.0,
-                            -2.0,
-                          ),
-                        ),
-                        BoxShadow(
-                          color: AppColors.shadowColor,
-                          spreadRadius: 2.0,
-                          blurRadius: 4.0,
-                          offset: Offset(
-                            2.0,
-                            2.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                    child: const TextField(),
-                  ),
+                const Expanded(
+                  child: HomeSearchWidget(),
                 ),
                 const SizedBox(
                   width: 34.0,
                 ),
-                const Icon(
-                  Icons.shopping_cart_outlined,
-                  size: 29.0,
+                ShoppingCartWidget(
+                  onTab: () {},
                 ),
               ],
             )
