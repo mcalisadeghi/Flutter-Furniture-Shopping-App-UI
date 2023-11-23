@@ -81,7 +81,30 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(
               height: 28.0,
             ),
-            const ExploreListTileWidget(),
+            SizedBox(
+              height: 320.0,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                padding: const EdgeInsets.all(
+                  8.0,
+                ),
+                itemCount: 4,
+                itemBuilder: (
+                  BuildContext context,
+                  int index,
+                ) {
+                  return const ExploreListTileWidget();
+                },
+                separatorBuilder: (
+                  BuildContext context,
+                  int child,
+                ) =>
+                    const SizedBox(
+                  width: 14.0,
+                ),
+              ),
+            ),
           ],
         ),
       ),
