@@ -18,6 +18,7 @@ class MyHomePage extends StatelessWidget {
           top: 40.0,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 20.0,
@@ -50,8 +51,9 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 34.0,
+              height: 35.0,
             ),
+            // search and card
             Row(
               children: [
                 const Expanded(
@@ -64,7 +66,30 @@ class MyHomePage extends StatelessWidget {
                   onTab: () {},
                 ),
               ],
-            )
+            ),
+            const SizedBox(
+              height: 35.0,
+            ),
+            Text(
+              'Explore',
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(
+              height: 28.0,
+            ),
+            Container(
+              padding: EdgeInsets.all(
+                14.0,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  12.0,
+                ),
+              ),
+            ),
           ],
         ),
       ),

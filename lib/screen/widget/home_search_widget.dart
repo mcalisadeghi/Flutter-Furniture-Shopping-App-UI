@@ -27,7 +27,7 @@ class HomeSearchWidget extends StatelessWidget {
             color: AppColors.shadowColor,
             spreadRadius: 2.0,
             blurRadius: 4.0,
-            offset: Offset(
+            offset: const Offset(
               2.0,
               2.0,
             ),
