@@ -75,7 +75,7 @@ class MyHomePage extends StatelessWidget {
             Text(
               'Explore',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontSize: 22.0,
+                    fontSize: 26.0,
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -109,6 +109,54 @@ class MyHomePage extends StatelessWidget {
                     const SizedBox(
                   width: 14.0,
                 ),
+              ),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Text(
+              'Bst Selling',
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: 26.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.whiteColor,
+                borderRadius: BorderRadius.circular(
+                  30.0,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.shadowColor,
+                    spreadRadius: 2.0,
+                    blurRadius: 4.0,
+                    offset: const Offset(
+                      -2.0,
+                      -2.0,
+                    ),
+                  ),
+                  BoxShadow(
+                    color: AppColors.shadowColor,
+                    spreadRadius: 2.0,
+                    blurRadius: 4.0,
+                    offset: const Offset(
+                      2.0,
+                      2.0,
+                    ),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  Image.asset(
+                    AppAssets.productIcon5,
+                  ),
+                ],
               ),
             ),
           ],
