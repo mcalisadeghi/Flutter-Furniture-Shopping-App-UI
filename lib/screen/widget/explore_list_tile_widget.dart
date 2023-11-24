@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 
 class ExploreListTileWidget extends StatelessWidget {
-  const ExploreListTileWidget({super.key});
+  final String productName;
+  final String assets;
+  final String price;
+  const ExploreListTileWidget({
+    super.key,
+    required this.productName,
+    required this.assets,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +34,8 @@ class ExploreListTileWidget extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 3 / 3.5,
               child: Image.asset(
-                AppAssets.productIcon1,
+                assets,
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -35,7 +43,7 @@ class ExploreListTileWidget extends StatelessWidget {
             height: 12.0,
           ),
           Text(
-            'Item Name',
+            productName,
             style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontSize: 14.0,
                   fontWeight: FontWeight.w600,
@@ -57,7 +65,7 @@ class ExploreListTileWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '\$250.00',
+                price,
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w400,
@@ -66,9 +74,10 @@ class ExploreListTileWidget extends StatelessWidget {
               CircleAvatar(
                 radius: 15.0,
                 backgroundColor: AppColors.buttonColor,
-                child: const Icon(
+                child: Icon(
                   Icons.add,
                   size: 20.0,
+                  color: AppColors.whiteColor,
                 ),
               ),
               const SizedBox(

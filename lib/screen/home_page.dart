@@ -95,7 +95,12 @@ class MyHomePage extends StatelessWidget {
                   BuildContext context,
                   int index,
                 ) {
-                  return const ExploreListTileWidget();
+                  var product = DummyProductList.explorList[index];
+                  return ExploreListTileWidget(
+                    productName: product.productName,
+                    assets: product.productImage,
+                    price: product.price,
+                  );
                 },
                 separatorBuilder: (
                   BuildContext context,

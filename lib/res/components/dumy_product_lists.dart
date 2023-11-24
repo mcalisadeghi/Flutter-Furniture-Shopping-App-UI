@@ -6,18 +6,22 @@ class DummyProductList {
     ProductModel(
       productImage: AppAssets.productIcon1,
       productName: 'Mini white chair',
+      price: '250.00',
     ),
     ProductModel(
       productImage: AppAssets.productIcon2,
       productName: 'Mini white chair',
+      price: '250.00',
     ),
     ProductModel(
       productImage: AppAssets.productIcon3,
       productName: 'Mini white chair',
+      price: '250.00',
     ),
     ProductModel(
       productImage: AppAssets.productIcon4,
       productName: 'Mini white chair',
+      price: '250.00',
     ),
   ];
 }
