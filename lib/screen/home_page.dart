@@ -125,6 +125,9 @@ class MyHomePage extends StatelessWidget {
               height: 20.0,
             ),
             Container(
+              padding: const EdgeInsets.all(
+                14.0,
+              ),
               decoration: BoxDecoration(
                 color: AppColors.whiteColor,
                 borderRadius: BorderRadius.circular(
@@ -153,8 +156,47 @@ class MyHomePage extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Image.asset(
-                    AppAssets.productIcon5,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(
+                      20.0,
+                    ),
+                    child: Image.asset(
+                      AppAssets.productIcon5,
+                      height: 75.0,
+                      width: 75.0,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Item name',
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w600,
+                            ),
+                      ),
+                      const SizedBox(
+                        height: 5.0,
+                      ),
+                      Text(
+                        'Description',
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.w300,
+                            ),
+                      ),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                      Text(
+                        'price',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                      ),
+                    ],
                   ),
                 ],
               ),
