@@ -37,9 +37,21 @@ class _ProductDetailState extends State<ProductDetail> {
             ),
             child: Row(
               children: [
-                Icon(
-                  Icons.add,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    size: 28.0,
+                  ),
                 ),
+                Text(
+                  'Product',
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        fontSize: 18.0,
+                      ),
+                )
               ],
             ),
           ),
