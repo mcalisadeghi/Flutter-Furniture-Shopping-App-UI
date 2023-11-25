@@ -23,7 +23,7 @@ class _ProductDetailState extends State<ProductDetail> {
             height: size.height * 0.5,
             width: size.width,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(
                   70.0,
                 ),
@@ -41,7 +41,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back,
                     size: 28.0,
                   ),
@@ -51,7 +51,9 @@ class _ProductDetailState extends State<ProductDetail> {
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         fontSize: 18.0,
                       ),
-                )
+                ),
+
+                // 16:38
               ],
             ),
           ),
