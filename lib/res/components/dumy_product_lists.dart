@@ -24,4 +24,26 @@ class DummyProductList {
       price: '250.00',
     ),
   ];
+  static List<ProductModel> bestsSellingList = <ProductModel>[
+    ProductModel(
+      productImage: AppAssets.productIcon1,
+      productName: 'elegant chair',
+      price: '250.00',
+    ),
+    ProductModel(
+      productImage: AppAssets.productIcon2,
+      productName: 'Minimal white chair',
+      price: '250.00',
+    ),
+    ProductModel(
+      productImage: AppAssets.productIcon3,
+      productName: 'white chair',
+      price: '250.00',
+    ),
+    ProductModel(
+      productImage: AppAssets.productIcon4,
+      productName: 'Mini chair',
+      price: '250.00',
+    ),
+  ];
 }

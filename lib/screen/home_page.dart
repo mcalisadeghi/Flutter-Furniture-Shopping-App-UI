@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 import 'package:flutter_application_1/res/components/dumy_product_lists.dart';
+import 'package:flutter_application_1/screen/widget/best_selling_tile_widget.dart';
 import 'package:flutter_application_1/screen/widget/explore_list_tile_widget.dart';
 import 'package:flutter_application_1/screen/widget/home_search_widget.dart';
 import 'package:flutter_application_1/screen/widget/shopping_cart_widget.dart';
@@ -124,6 +125,7 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(
               height: 20.0,
             ),
+            BestSellingListTileWidget(),
           ],
         ),
       ),
