@@ -5,11 +5,13 @@ class BestSellingListTileWidget extends StatelessWidget {
   final String productName;
   final String asset;
   final String price;
+  final VoidCallback onTap;
   const BestSellingListTileWidget({
     super.key,
     required this.productName,
     required this.asset,
     required this.price,
+    required this.onTap,
   });
 
   @override
@@ -98,19 +100,22 @@ class BestSellingListTileWidget extends StatelessWidget {
           const Spacer(),
           Align(
             alignment: Alignment.bottomRight,
-            child: Container(
-              padding: const EdgeInsets.all(
-                6.0,
-              ),
-              decoration: BoxDecoration(
-                color: AppColors.buttonColor,
-                borderRadius: BorderRadius.circular(
-                  10.0,
+            child: InkWell(
+              onTap: onTap,
+              child: Container(
+                padding: const EdgeInsets.all(
+                  6.0,
                 ),
-              ),
-              child: Icon(
-                Icons.arrow_forward,
-                color: AppColors.whiteColor,
+                decoration: BoxDecoration(
+                  color: AppColors.buttonColor,
+                  borderRadius: BorderRadius.circular(
+                    10.0,
+                  ),
+                ),
+                child: Icon(
+                  Icons.arrow_forward,
+                  color: AppColors.whiteColor,
+                ),
               ),
             ),
           ),
