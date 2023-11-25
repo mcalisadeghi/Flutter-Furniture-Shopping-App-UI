@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 
 class BestSellingListTileWidget extends StatelessWidget {
-  const BestSellingListTileWidget({super.key});
+  final String productName;
+  final String asset;
+  final String price;
+  const BestSellingListTileWidget({
+    super.key,
+    required this.productName,
+    required this.asset,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.all(
         18.0,
       ),
+      width: size.width * 83.0,
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
         borderRadius: BorderRadius.circular(
@@ -38,14 +47,14 @@ class BestSellingListTileWidget extends StatelessWidget {
         ],
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(
               20.0,
             ),
             child: Image.asset(
-              AppAssets.productIcon5,
+              asset,
               height: 75.0,
               width: 75.0,
               fit: BoxFit.fill,
@@ -55,10 +64,11 @@ class BestSellingListTileWidget extends StatelessWidget {
             width: 20.0,
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Item name',
+                productName,
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w600,
@@ -77,7 +87,7 @@ class BestSellingListTileWidget extends StatelessWidget {
                 height: 8.0,
               ),
               Text(
-                'price',
+                price,
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w400,
@@ -86,17 +96,22 @@ class BestSellingListTileWidget extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Container(
-            padding: const EdgeInsets.all(6.0),
-            decoration: BoxDecoration(
-              color: AppColors.buttonColor,
-              borderRadius: BorderRadius.circular(
-                10.0,
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              padding: const EdgeInsets.all(
+                6.0,
               ),
-            ),
-            child: Icon(
-              Icons.arrow_forward,
-              color: AppColors.whiteColor,
+              decoration: BoxDecoration(
+                color: AppColors.buttonColor,
+                borderRadius: BorderRadius.circular(
+                  10.0,
+                ),
+              ),
+              child: Icon(
+                Icons.arrow_forward,
+                color: AppColors.whiteColor,
+              ),
             ),
           ),
         ],
