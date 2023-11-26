@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/product/product_model.dart';
+import 'package:flutter_application_1/screen/widget/shopping_cart_widget.dart';
 
 class ProductDetail extends StatefulWidget {
   final ProductModel productModel;
@@ -20,6 +21,10 @@ class _ProductDetailState extends State<ProductDetail> {
       body: Column(
         children: [
           Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 22.0,
+            ),
+            alignment: Alignment.topCenter,
             height: size.height * 0.5,
             width: size.width,
             decoration: BoxDecoration(
@@ -36,6 +41,7 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
                   onTap: () {
@@ -51,6 +57,9 @@ class _ProductDetailState extends State<ProductDetail> {
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         fontSize: 18.0,
                       ),
+                ),
+                ShoppingCartWidget(
+                  onTab: () {},
                 ),
 
                 // 16:38
