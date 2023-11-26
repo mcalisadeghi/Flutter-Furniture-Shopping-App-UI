@@ -20,11 +20,12 @@ class _ProductDetailState extends State<ProductDetail> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 22.0,
                 ).copyWith(
                   top: size.height * 0.06,
@@ -96,6 +97,52 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ],
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 20.0,
+            ),
+            child: Text(
+              '\$${widget.productModel.price}',
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                    color: AppColors.redColor,
+                    fontSize: 26.0,
+                    fontWeight: FontWeight.w800,
+                  ),
+            ),
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+            ),
+            child: Row(
+              children: [
+                Text(
+                  widget.productModel.productName,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        color: AppColors.redColor,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+                Spacer(),
+                for (int i = 1; i <= 5; i++)
+                  Icon(
+                    i != 5 ? Icons.star_sharp : Icons.star_border,
+                    color: AppColors.orangeColor,
+                  ),
+                Text(
+                  '4.5',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ],
+            ),
           ),
         ],
       ),
