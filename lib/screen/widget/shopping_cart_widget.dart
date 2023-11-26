@@ -14,7 +14,12 @@ class ShoppingCartWidget extends StatelessWidget {
       onTap: onTab,
       child: Stack(
         alignment: Alignment.topRight,
+        clipBehavior: Clip.none,
         children: [
+          const Icon(
+            Icons.shopping_cart_outlined,
+            size: 29.0,
+          ),
           Positioned(
             top: -4.0,
             right: -4,
@@ -23,10 +28,6 @@ class ShoppingCartWidget extends StatelessWidget {
               color: AppColors.redColor,
               size: 16.0,
             ),
-          ),
-          const Icon(
-            Icons.shopping_cart_outlined,
-            size: 29.0,
           ),
         ],
       ),

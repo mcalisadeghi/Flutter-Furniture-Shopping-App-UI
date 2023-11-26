@@ -75,10 +75,12 @@ class _ProductDetailState extends State<ProductDetail> {
                 bottom: -25.0,
                 right: 20.0,
                 child: Container(
+                  height: 55.0,
+                  width: 55.0,
                   decoration: BoxDecoration(
                     color: AppColors.whiteColor,
                     shape: BoxShape.circle,
-                    boxShadow: [
+                    boxShadow: <BoxShadow>[
                       BoxShadow(
                         color: AppColors.shadowColor,
                         spreadRadius: 3.0,
@@ -88,6 +90,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   ),
                   child: Icon(
                     Icons.favorite,
+                    size: 28.0,
                     color: AppColors.redColor,
                   ),
                 ),
