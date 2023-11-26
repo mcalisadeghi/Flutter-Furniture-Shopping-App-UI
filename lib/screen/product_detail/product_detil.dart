@@ -98,7 +98,7 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           Padding(
@@ -114,7 +114,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 4.0,
           ),
           Padding(
@@ -131,7 +131,7 @@ class _ProductDetailState extends State<ProductDetail> {
                         fontWeight: FontWeight.w600,
                       ),
                 ),
-                Spacer(),
+                const Spacer(),
                 for (int i = 1; i <= 5; i++)
                   Icon(
                     i != 5 ? Icons.star_sharp : Icons.star_border,
@@ -140,7 +140,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 Text(
                   '4.5',
                   style: Theme.of(context).textTheme.bodyMedium,
-                ),
+                ), //19:18
               ],
             ),
           ),
