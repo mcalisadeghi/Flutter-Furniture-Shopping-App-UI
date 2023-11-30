@@ -15,6 +15,7 @@ class ProductDetail extends StatefulWidget {
 }
 
 class _ProductDetailState extends State<ProductDetail> {
+  int selectedColor = 0;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -162,26 +163,49 @@ class _ProductDetailState extends State<ProductDetail> {
       ),
     );
   }
-}
 
-List<Widget> getColors() {
-  return List.generate(
-    3,
-    (int index) => Padding(
-      padding: const EdgeInsets.only(
-        right: 8.0,
-        top: 10.0,
+  List<Widget> getColors() {
+    return List.generate(
+      colorList.length,
+      (int index) => Padding(
+        padding: const EdgeInsets.only(
+          right: 8.0,
+          top: 10.0,
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            InkWell(
+              onTap: () {
+                setState(
+                  () {
+                    selectedColor = index;
+                  },
+                );
+              },
+              child: Icon(
+                Icons.circle,
+                color: colorList[index],
+                size: 24.0,
+              ),
+            ),
+            Visibility(
+              visible: selectedColor == index,
+              child: Icon(
+                Icons.circle,
+                color: colorList[index],
+                size: 36.0, // time 21:36
+              ),
+            ),
+          ],
+        ),
       ),
-      child: Icon(
-        Icons.circle,
-        color: colorList[index],
-      ),
-    ),
-  ).toList();
-}
+    ).toList();
+  }
 
-List<Color> colorList = <Color>[
-  AppColors.grayColor,
-  AppColors.redColor,
-  AppColors.buttonColor,
-];
+  List<Color> colorList = <Color>[
+    AppColors.grayColor,
+    AppColors.redColor,
+    AppColors.buttonColor,
+  ];
+}
