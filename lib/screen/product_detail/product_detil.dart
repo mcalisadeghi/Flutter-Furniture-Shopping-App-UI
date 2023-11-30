@@ -137,11 +137,25 @@ class _ProductDetailState extends State<ProductDetail> {
                     i != 5 ? Icons.star_sharp : Icons.star_border,
                     color: AppColors.orangeColor,
                   ),
+                const SizedBox(
+                  width: 4.0,
+                ),
                 Text(
                   '4.5',
                   style: Theme.of(context).textTheme.bodyMedium,
-                ), //19:18
+                ),
               ],
+            ),
+          ),
+          const SizedBox(
+            height: 15.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 20.0,
+            ),
+            child: Row(
+              children: getColors(),
             ),
           ),
         ],
@@ -149,3 +163,25 @@ class _ProductDetailState extends State<ProductDetail> {
     );
   }
 }
+
+List<Widget> getColors() {
+  return List.generate(
+    3,
+    (int index) => Padding(
+      padding: const EdgeInsets.only(
+        right: 8.0,
+        top: 10.0,
+      ),
+      child: Icon(
+        Icons.circle,
+        color: colorList[index],
+      ),
+    ),
+  ).toList();
+}
+
+List<Color> colorList = <Color>[
+  AppColors.grayColor,
+  AppColors.redColor,
+  AppColors.buttonColor,
+];
