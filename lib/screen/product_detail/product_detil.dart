@@ -21,6 +21,7 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: AppColors.backGoundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
