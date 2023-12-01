@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 import 'package:flutter_application_1/res/components/dumy_product_lists.dart';
+import 'package:flutter_application_1/screen/product_detail/cart/cart_wiew.dart';
 import 'package:flutter_application_1/screen/product_detail/product_detil.dart';
 import 'package:flutter_application_1/screen/widget/best_selling_tile_widget.dart';
 import 'package:flutter_application_1/screen/widget/explore_list_tile_widget.dart';
@@ -77,7 +78,11 @@ class MyHomePage extends StatelessWidget {
                       width: 34.0,
                     ),
                     ShoppingCartWidget(
-                      onTab: () {},
+                      onTab: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const CartView(),
+                        ),
+                      ),
                     ),
                   ],
                 ),
