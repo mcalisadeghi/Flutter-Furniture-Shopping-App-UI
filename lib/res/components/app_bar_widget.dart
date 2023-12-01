@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/product_detail/cart/cart_wiew.dart';
+import 'package:flutter_application_1/screen/product_detail/cart/cart_view.dart';
 import 'package:flutter_application_1/screen/widget/shopping_cart_widget.dart';
 
 class AppaBarWidget extends StatelessWidget {
@@ -32,7 +32,7 @@ class AppaBarWidget extends StatelessWidget {
         ShoppingCartWidget(
           onTab: () => Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const CartView(),
+              builder: (context) => const Cartview(),
             ),
           ),
         ),

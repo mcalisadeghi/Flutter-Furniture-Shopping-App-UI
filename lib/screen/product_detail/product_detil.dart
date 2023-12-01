@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/product/product_model.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 import 'package:flutter_application_1/res/components/app_bar_widget.dart';
-import 'package:flutter_application_1/screen/product_detail/cart/cart_wiew.dart';
+import 'package:flutter_application_1/screen/product_detail/cart/cart_view.dart';
 
 class ProductDetail extends StatefulWidget {
   final ProductModel productModel;
