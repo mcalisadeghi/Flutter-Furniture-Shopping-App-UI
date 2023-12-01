@@ -38,11 +38,47 @@ class _CartviewState extends State<Cartview> {
               ClipRRect(
                 child: Image.asset(
                   AppAssets.productIcon5,
-                  height: 75.0,
-                  width: 75.0,
+                  height: 100.0,
+                  width: 100.0,
                   fit: BoxFit.fill,
                 ),
               ),
+              Column(
+                children: [
+                  const Text(
+                    'Item Name',
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        '\$300.0',
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: AppColors.grayColor,
+                          ),
+                        ),
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.remove,
+                              size: 20.0,
+                            ),
+                            Text(
+                              '2',
+                            ),
+                            Icon(
+                              Icons.add,
+                              size: 26.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ), //26:48
             ],
           ),
         ],
