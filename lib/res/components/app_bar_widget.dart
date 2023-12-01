@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/widget/shopping_cart_widget.dart';
 
 class AppaBarWidget extends StatelessWidget {
-  const AppaBarWidget({super.key});
+  final String title;
+  const AppaBarWidget({
+    super.key,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class AppaBarWidget extends StatelessWidget {
           ),
         ),
         Text(
-          'Product',
+          title,
           style: Theme.of(context).textTheme.titleSmall!.copyWith(
                 fontSize: 18.0,
               ),

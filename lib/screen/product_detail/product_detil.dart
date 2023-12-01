@@ -26,28 +26,31 @@ class _ProductDetailState extends State<ProductDetail> {
           Stack(
             children: [
               Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 22.0,
-                  ).copyWith(
-                    top: size.height * 0.06,
-                  ),
-                  alignment: Alignment.topCenter,
-                  height: size.height * 0.5,
-                  width: size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(
-                        70.0,
-                      ),
-                    ),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        widget.productModel.productImage,
-                      ),
-                      fit: BoxFit.fill,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 22.0,
+                ).copyWith(
+                  top: size.height * 0.06,
+                ),
+                alignment: Alignment.topCenter,
+                height: size.height * 0.5,
+                width: size.width,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(
+                      70.0,
                     ),
                   ),
-                  child: const AppaBarWidget()),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      widget.productModel.productImage,
+                    ),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                child: const AppaBarWidget(
+                  title: 'Product',
+                ),
+              ),
               Positioned(
                 bottom: -25.0,
                 right: 20.0,
