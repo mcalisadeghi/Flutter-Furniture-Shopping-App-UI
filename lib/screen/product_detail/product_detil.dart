@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/product/product_model.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
-import 'package:flutter_application_1/screen/widget/shopping_cart_widget.dart';
+import 'package:flutter_application_1/res/components/app_bar_widget.dart';
 
 class ProductDetail extends StatefulWidget {
   final ProductModel productModel;
@@ -26,53 +26,28 @@ class _ProductDetailState extends State<ProductDetail> {
           Stack(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 22.0,
-                ).copyWith(
-                  top: size.height * 0.06,
-                ),
-                alignment: Alignment.topCenter,
-                height: size.height * 0.5,
-                width: size.width,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(
-                      70.0,
-                    ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 22.0,
+                  ).copyWith(
+                    top: size.height * 0.06,
                   ),
-                  image: DecorationImage(
-                    image: AssetImage(
-                      widget.productModel.productImage,
-                    ),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Icon(
-                        Icons.arrow_back,
-                        size: 28.0,
+                  alignment: Alignment.topCenter,
+                  height: size.height * 0.5,
+                  width: size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(
+                        70.0,
                       ),
                     ),
-                    Text(
-                      'Product',
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            fontSize: 18.0,
-                          ),
+                    image: DecorationImage(
+                      image: AssetImage(
+                        widget.productModel.productImage,
+                      ),
+                      fit: BoxFit.fill,
                     ),
-                    ShoppingCartWidget(
-                      onTab: () {},
-                    ),
-
-                    // 16:38
-                  ],
-                ),
-              ),
+                  ),
+                  child: const AppaBarWidget()),
               Positioned(
                 bottom: -25.0,
                 right: 20.0,
@@ -190,10 +165,51 @@ class _ProductDetailState extends State<ProductDetail> {
             child: Text(
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sinmbled it to make a type specimen book. It has survived n",
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    fontSize: 12.0,
+                    fontSize: 14.0,
                   ),
+              textAlign: TextAlign.justify,
             ),
           ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: InkWell(
+              onTap: () {},
+              child: Container(
+                width: size.width * 0.55,
+                height: 65.0,
+                padding: const EdgeInsets.all(
+                  12.0,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.buttonColor,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(
+                      70.0,
+                    ),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.add,
+                      color: AppColors.whiteColor,
+                      size: 29.0,
+                    ),
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    Text(
+                      'Add to Cart',
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            color: AppColors.whiteColor,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
