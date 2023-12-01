@@ -155,8 +155,43 @@ class _ProductDetailState extends State<ProductDetail> {
             padding: const EdgeInsets.only(
               left: 20.0,
             ),
+            child: Text(
+              'Color Option',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 20.0,
+            ),
             child: Row(
               children: getColors(),
+            ),
+          ),
+          const SizedBox(
+            height: 15.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 20.0,
+            ),
+            child: Text(
+              'Description',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+          ),
+          const SizedBox(
+            height: 10.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+            ),
+            child: Text(
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sinmbled it to make a type specimen book. It has survived n",
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                    fontSize: 12.0,
+                  ),
             ),
           ),
         ],
@@ -186,7 +221,7 @@ class _ProductDetailState extends State<ProductDetail> {
               child: Icon(
                 Icons.circle,
                 color: colorList[index],
-                size: 24.0,
+                size: selectedColor == index ? 20.0 : 30.0,
               ),
             ),
             Visibility(
