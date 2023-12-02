@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 import 'package:flutter_application_1/res/components/app_bar_widget.dart';
+import 'package:flutter_application_1/res/components/custom_button.dart';
 import 'package:flutter_application_1/res/components/dumy_product_lists.dart';
 import 'package:flutter_application_1/screen/product_detail/cart/widget/bottom_text_widget.dart';
 import 'package:flutter_application_1/screen/product_detail/cart/widget/cart_item_widget.dart';
@@ -116,6 +116,10 @@ class _CartviewState extends State<Cartview> {
                   ),
                   SizedBox(
                     height: 22.0,
+                  ),
+                  CustomButton(
+                    onTap: () {},
+                    title: 'Checkout',
                   ),
                 ],
               ),

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 
-class CustomVutton extends StatelessWidget {
-  double? width = 55.0;
-  double? height = 55.0;
+class CustomButton extends StatelessWidget {
+  final double? width, height;
   final VoidCallback onTap;
   final String title;
-  CustomVutton({
+  const CustomButton({
     super.key,
-    this.height,
-    this.width,
+    this.height = 55.0,
+    this.width = 55.0,
     required this.onTap,
     required this.title,
   });
