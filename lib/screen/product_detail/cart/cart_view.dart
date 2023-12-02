@@ -37,7 +37,7 @@ class _CartviewState extends State<Cartview> {
             height: 30.0,
           ), //28:58
           SizedBox(
-            height: size.height * 0.45,
+            height: size.height * 0.43,
             child: ListView.separated(
               itemCount: DummyProductList.cartList.length,
               shrinkWrap: true,
@@ -117,9 +117,14 @@ class _CartviewState extends State<Cartview> {
                   SizedBox(
                     height: 22.0,
                   ),
+                  // check out button
                   CustomButton(
+                    width: size.width * 0.7,
                     onTap: () {},
                     title: 'Checkout',
+                  ),
+                  SizedBox(
+                    height: 14.0,
                   ),
                 ],
               ),
