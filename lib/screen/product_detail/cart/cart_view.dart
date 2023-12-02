@@ -175,6 +175,29 @@ class _CartviewState extends State<Cartview> {
                   BottomTextWidget(
                     leadingText: 'Selected Items',
                     price: '200.0',
+                    isSubT: false,
+                  ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  BottomTextWidget(
+                    leadingText: 'Shipping Fee',
+                    price: '30.0',
+                    isSubT: false,
+                  ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  Divider(
+                    color: AppColors.grayColor,
+                  ),
+                  SizedBox(
+                    height: 25.0,
+                  ),
+                  BottomTextWidget(
+                    leadingText: 'Subtotal',
+                    price: '230.0',
+                    isSubT: true,
                   ),
                 ],
               ),
