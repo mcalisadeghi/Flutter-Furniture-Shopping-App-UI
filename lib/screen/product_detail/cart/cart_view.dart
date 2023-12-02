@@ -3,7 +3,8 @@ import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 import 'package:flutter_application_1/res/components/app_bar_widget.dart';
 import 'package:flutter_application_1/res/components/dumy_product_lists.dart';
-import 'package:flutter_application_1/screen/product_detail/cart/bottom_text_widget.dart';
+import 'package:flutter_application_1/screen/product_detail/cart/widget/bottom_text_widget.dart';
+import 'package:flutter_application_1/screen/product_detail/cart/widget/cart_item_widget.dart';
 
 class Cartview extends StatefulWidget {
   const Cartview({super.key});
@@ -50,95 +51,9 @@ class _CartviewState extends State<Cartview> {
                   SizedBox(
                 height: 15.0,
               ),
-              itemBuilder: (context, snapshot) {
-                return SizedBox(
-                  height: 100.0,
-                  width: size.width,
-                  child: Row(
-                    children: [
-                      Checkbox(
-                        value: false,
-                        onChanged: (bool? value) {},
-                      ),
-                      SizedBox(
-                        width: 15.0,
-                      ),
-                      ClipRRect(
-                        child: Image.asset(
-                          AppAssets.productIcon5,
-                          height: 100.0,
-                          width: 100.0,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 20.0,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              'Item Name',
-                              style: Theme.of(context).textTheme.titleLarge,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  '\$300.0',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: AppColors.lightRed,
-                                      ),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 4.0,
-                                  ),
-                                  width: 90.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(
-                                      30.0,
-                                    ),
-                                    border: Border.all(
-                                      color: AppColors.grayColor,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Icon(
-                                          Icons.remove,
-                                          size: 20.0,
-                                        ),
-                                      ),
-                                      Text(
-                                        '2',
-                                      ),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Icon(
-                                          Icons.add,
-                                          size: 26.0,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+              itemBuilder: (BuildContext context, int index) {
+                return CartItemWidget(
+                  productModel: DummyProductList.cartList[index],
                 );
               },
             ),
@@ -198,6 +113,9 @@ class _CartviewState extends State<Cartview> {
                     leadingText: 'Subtotal',
                     price: '230.0',
                     isSubT: true,
+                  ),
+                  SizedBox(
+                    height: 22.0,
                   ),
                 ],
               ),
