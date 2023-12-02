@@ -124,9 +124,7 @@ class MyHomePage extends StatelessWidget {
                     ) {
                       var product = DummyProductList.explorList[index];
                       return ExploreListTileWidget(
-                        productName: product.productName,
-                        assets: product.productImage,
-                        price: product.price,
+                        productModel: product,
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(

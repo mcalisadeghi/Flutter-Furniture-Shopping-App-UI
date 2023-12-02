@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/product/product_model.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
+import 'package:flutter_application_1/utils/utils.dart';
 
 class ExploreListTileWidget extends StatelessWidget {
-  final String productName;
-  final String assets;
-  final String price;
+  final ProductModel productModel;
   final VoidCallback onTap;
   const ExploreListTileWidget({
     super.key,
-    required this.productName,
-    required this.assets,
-    required this.price,
     required this.onTap,
+    required this.productModel,
   });
 
   @override
@@ -40,7 +38,7 @@ class ExploreListTileWidget extends StatelessWidget {
                   child: AspectRatio(
                     aspectRatio: 3 / 3.5,
                     child: Image.asset(
-                      assets,
+                      productModel.productImage,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -79,7 +77,7 @@ class ExploreListTileWidget extends StatelessWidget {
             height: 12.0,
           ),
           Text(
-            productName,
+            productModel.productName,
             style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontSize: 14.0,
                   fontWeight: FontWeight.w600,
@@ -101,19 +99,33 @@ class ExploreListTileWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                price,
+                '\$${productModel.price}',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w400,
                     ),
               ),
-              CircleAvatar(
-                radius: 15.0,
-                backgroundColor: AppColors.buttonColor,
-                child: Icon(
-                  Icons.add,
-                  size: 20.0,
-                  color: AppColors.whiteColor,
+              InkWell(
+                onTap: () {
+                  var isAdded = Utils.addToCart(
+                    productModel,
+                  );
+                  if (isAdded) {
+                    Utils.toastMessage();
+                  } else {
+                    Utils.toastMessage(
+                      mesage: 'Cant add to Cart',
+                    );
+                  }
+                },
+                child: CircleAvatar(
+                  radius: 15.0,
+                  backgroundColor: AppColors.buttonColor,
+                  child: Icon(
+                    Icons.add,
+                    size: 20.0,
+                    color: AppColors.whiteColor,
+                  ),
                 ),
               ),
               const SizedBox(

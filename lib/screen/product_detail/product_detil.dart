@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/product/product_model.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 import 'package:flutter_application_1/res/components/app_bar_widget.dart';
-import 'package:flutter_application_1/screen/product_detail/cart/cart_view.dart';
+import 'package:flutter_application_1/utils/utils.dart';
 
 class ProductDetail extends StatefulWidget {
   final ProductModel productModel;
@@ -178,7 +178,18 @@ class _ProductDetailState extends State<ProductDetail> {
           Align(
             alignment: Alignment.bottomRight,
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                var isAdded = Utils.addToCart(
+                  widget.productModel,
+                );
+                if (isAdded) {
+                  Utils.toastMessage();
+                } else {
+                  Utils.toastMessage(
+                    mesage: 'Cant add to Cart',
+                  );
+                }
+              },
               child: Container(
                 width: size.width * 0.55,
                 height: 65.0,
