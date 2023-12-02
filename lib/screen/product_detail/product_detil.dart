@@ -180,7 +180,7 @@ class _ProductDetailState extends State<ProductDetail> {
             child: InkWell(
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const CartView(),
+                  builder: (context) => const Cartview(),
                 ),
               ),
               child: Container(
