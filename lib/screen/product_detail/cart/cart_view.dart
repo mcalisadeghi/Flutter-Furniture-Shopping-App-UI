@@ -3,6 +3,7 @@ import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
 import 'package:flutter_application_1/res/components/app_bar_widget.dart';
 import 'package:flutter_application_1/res/components/dumy_product_lists.dart';
+import 'package:flutter_application_1/screen/product_detail/cart/bottom_text_widget.dart';
 
 class Cartview extends StatefulWidget {
   const Cartview({super.key});
@@ -171,12 +172,9 @@ class _CartviewState extends State<Cartview> {
               ),
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Selected Items',
-                      ),
-                    ],
+                  BottomTextWidget(
+                    leadingText: 'Selected Items',
+                    price: '200.0',
                   ),
                 ],
               ),
