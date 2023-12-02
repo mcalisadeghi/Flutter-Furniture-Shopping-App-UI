@@ -32,7 +32,7 @@ class _CartviewState extends State<Cartview> {
         children: [
           SizedBox(
             height: 30.0,
-          ),
+          ), //28:58
           SizedBox(
             height: 100.0,
             width: size.width,

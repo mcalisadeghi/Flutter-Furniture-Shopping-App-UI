@@ -178,11 +178,7 @@ class _ProductDetailState extends State<ProductDetail> {
           Align(
             alignment: Alignment.bottomRight,
             child: InkWell(
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const Cartview(),
-                ),
-              ),
+              onTap: () {},
               child: Container(
                 width: size.width * 0.55,
                 height: 65.0,
