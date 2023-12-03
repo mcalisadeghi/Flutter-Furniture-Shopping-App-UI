@@ -33,7 +33,7 @@ class _CartviewState extends State<Cartview> {
       ),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30.0,
           ), //28:58
           SizedBox(
@@ -41,14 +41,14 @@ class _CartviewState extends State<Cartview> {
             child: ListView.separated(
               itemCount: DummyProductList.cartList.length,
               shrinkWrap: true,
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20.0,
               ),
               separatorBuilder: (
                 BuildContext context,
                 int snapshot,
               ) =>
-                  SizedBox(
+                  const SizedBox(
                 height: 15.0,
               ),
               itemBuilder: (BuildContext context, int index) {
@@ -59,14 +59,14 @@ class _CartviewState extends State<Cartview> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25.0,
           ),
           Expanded(
             child: Container(
               decoration: BoxDecoration(
                 color: AppColors.whiteColor,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(
                     50.0,
                   ),
@@ -79,7 +79,7 @@ class _CartviewState extends State<Cartview> {
                     color: AppColors.shadowColor,
                     spreadRadius: 6.0,
                     blurRadius: 5.0,
-                    offset: Offset(
+                    offset: const Offset(
                       -5.0,
                       -4.0,
                     ),
@@ -88,34 +88,34 @@ class _CartviewState extends State<Cartview> {
               ),
               child: Column(
                 children: [
-                  BottomTextWidget(
+                  const BottomTextWidget(
                     leadingText: 'Selected Items',
                     price: '200.0',
                     isSubT: false,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15.0,
                   ),
-                  BottomTextWidget(
+                  const BottomTextWidget(
                     leadingText: 'Shipping Fee',
                     price: '30.0',
                     isSubT: false,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15.0,
                   ),
                   Divider(
                     color: AppColors.grayColor,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25.0,
                   ),
-                  BottomTextWidget(
+                  const BottomTextWidget(
                     leadingText: 'Subtotal',
                     price: '230.0',
                     isSubT: true,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 22.0,
                   ),
                   // check out button
@@ -124,7 +124,7 @@ class _CartviewState extends State<Cartview> {
                     onTap: () {},
                     title: 'Checkout',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14.0,
                   ),
                 ],
