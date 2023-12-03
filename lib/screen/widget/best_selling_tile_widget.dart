@@ -27,7 +27,7 @@ class BestSellingListTileWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           30.0,
         ),
-        boxShadow: [
+        boxShadow: <BoxShadow>[
           BoxShadow(
             color: AppColors.shadowColor,
             spreadRadius: 2.0,
@@ -50,7 +50,7 @@ class BestSellingListTileWidget extends StatelessWidget {
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(
               20.0,
@@ -68,7 +68,7 @@ class BestSellingListTileWidget extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: <Widget>[
               Text(
                 productName,
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(

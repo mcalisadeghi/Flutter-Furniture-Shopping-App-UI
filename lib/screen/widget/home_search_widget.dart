@@ -13,7 +13,7 @@ class HomeSearchWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           12.0,
         ),
-        boxShadow: [
+        boxShadow: <BoxShadow>[
           BoxShadow(
             color: AppColors.shadowColor,
             spreadRadius: 2.0,

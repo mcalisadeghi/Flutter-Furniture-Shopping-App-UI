@@ -17,7 +17,7 @@ class BottomTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var newPrice = DummyProductList.cartList.isEmpty ? '00.0' : price;
     return Row(
-      children: [
+      children: <Widget>[
         Text(
           leadingText,
           style: isSubT

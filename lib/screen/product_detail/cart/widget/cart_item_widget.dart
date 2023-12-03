@@ -25,7 +25,7 @@ class _CartItemWidgetState extends State<CartItemWidget> {
       height: 100.0,
       width: size.width,
       child: Row(
-        children: [
+        children: <Widget>[
           Checkbox(
             value: cartVM.selectedItems.containsKey(
               widget.index,
@@ -52,7 +52,7 @@ class _CartItemWidgetState extends State<CartItemWidget> {
             checkColor: AppColors.whiteColor,
             activeColor: AppColors.lightRed,
           ),
-          SizedBox(
+          const SizedBox(
             width: 15.0,
           ),
           ClipRRect(
@@ -70,14 +70,14 @@ class _CartItemWidgetState extends State<CartItemWidget> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              children: <Widget>[
                 Text(
                   widget.productModel.productName,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: <Widget>[
                     Text(
                       '\$${widget.productModel.price}',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -99,7 +99,7 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: <Widget>[
                           InkWell(
                             onTap: () {
                               setState(
@@ -112,7 +112,7 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                                 },
                               );
                             },
-                            child: Icon(
+                            child: const Icon(
                               Icons.remove,
                               size: 20.0,
                             ),
@@ -133,7 +133,7 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                                 },
                               );
                             },
-                            child: Icon(
+                            child: const Icon(
                               Icons.add,
                               size: 26.0,
                             ),

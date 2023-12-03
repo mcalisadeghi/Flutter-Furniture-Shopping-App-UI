@@ -32,7 +32,7 @@ class _CartviewState extends State<Cartview> {
         ),
       ),
       body: Column(
-        children: [
+        children: <Widget>[
           const SizedBox(
             height: 30.0,
           ), //28:58
@@ -51,7 +51,10 @@ class _CartviewState extends State<Cartview> {
                   const SizedBox(
                 height: 15.0,
               ),
-              itemBuilder: (BuildContext context, int index) {
+              itemBuilder: (
+                BuildContext context,
+                int index,
+              ) {
                 return CartItemWidget(
                   productModel: DummyProductList.cartList[index],
                   index: index,
@@ -87,7 +90,7 @@ class _CartviewState extends State<Cartview> {
                 ],
               ),
               child: Column(
-                children: [
+                children: <Widget>[
                   const BottomTextWidget(
                     leadingText: 'Selected Items',
                     price: '200.0',

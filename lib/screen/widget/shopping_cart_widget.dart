@@ -15,7 +15,7 @@ class ShoppingCartWidget extends StatelessWidget {
       child: Stack(
         alignment: Alignment.topRight,
         clipBehavior: Clip.none,
-        children: [
+        children: <Widget>[
           const Icon(
             Icons.shopping_cart_outlined,
             size: 29.0,

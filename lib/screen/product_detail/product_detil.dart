@@ -24,9 +24,9 @@ class _ProductDetailState extends State<ProductDetail> {
       backgroundColor: AppColors.backGoundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           Stack(
-            children: [
+            children: <Widget>[
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 22.0,
@@ -103,7 +103,7 @@ class _ProductDetailState extends State<ProductDetail> {
               horizontal: 20.0,
             ),
             child: Row(
-              children: [
+              children: <Widget>[
                 Text(
                   widget.productModel.productName,
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -206,7 +206,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: <Widget>[
                     Icon(
                       Icons.add,
                       color: AppColors.whiteColor,
@@ -225,7 +225,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -241,7 +241,7 @@ class _ProductDetailState extends State<ProductDetail> {
         ),
         child: Stack(
           alignment: Alignment.center,
-          children: [
+          children: <Widget>[
             InkWell(
               onTap: () {
                 setState(

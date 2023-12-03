@@ -13,7 +13,7 @@ class AppaBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
+      children: <Widget>[
         InkWell(
           onTap: () {
             Navigator.of(context).pop();
@@ -36,8 +36,6 @@ class AppaBarWidget extends StatelessWidget {
             ),
           ),
         ),
-
-        // 16:38
       ],
     );
   }

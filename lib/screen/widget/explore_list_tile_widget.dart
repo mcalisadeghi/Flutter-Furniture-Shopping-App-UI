@@ -26,9 +26,9 @@ class ExploreListTileWidget extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           Stack(
-            children: [
+            children: <Widget>[
               ClipRRect(
                 borderRadius: BorderRadius.circular(
                   20.0,
@@ -97,7 +97,7 @@ class ExploreListTileWidget extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: <Widget>[
               Text(
                 '\$${productModel.price}',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(

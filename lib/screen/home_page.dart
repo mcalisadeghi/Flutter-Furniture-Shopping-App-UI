@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: <Widget>[
               const SizedBox(
                 height: 20.0,
               ),
@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: <Widget>[
                     Image.asset(
                       AppAssets.menuIcon,
                       width: 45.0,
@@ -70,7 +70,7 @@ class MyHomePage extends StatelessWidget {
                   horizontal: 20.0,
                 ),
                 child: Row(
-                  children: [
+                  children: <Widget>[
                     const Expanded(
                       child: HomeSearchWidget(),
                     ),
