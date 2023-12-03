@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/product/product_model.dart';
-import 'package:flutter_application_1/res/assets/app_asets.dart';
 import 'package:flutter_application_1/res/colors/app_color.dart';
+import 'package:flutter_application_1/view_models/cart/cart_view_model.dart';
 
 class CartItemWidget extends StatefulWidget {
+  final int index;
   final ProductModel productModel;
   const CartItemWidget({
     super.key,
     required this.productModel,
+    required this.index,
   });
 
   @override
@@ -15,6 +17,7 @@ class CartItemWidget extends StatefulWidget {
 }
 
 class _CartItemWidgetState extends State<CartItemWidget> {
+  final cartVM = CartViewModel();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -24,8 +27,30 @@ class _CartItemWidgetState extends State<CartItemWidget> {
       child: Row(
         children: [
           Checkbox(
-            value: false,
-            onChanged: (bool? value) {},
+            value: cartVM.selectedItems.containsKey(
+              widget.index,
+            ),
+            onChanged: (bool? value) {
+              if (cartVM.selectedItems.containsKey(widget.index)) {
+                setState(
+                  () {
+                    cartVM.selectedItems.containsKey(
+                      widget.index,
+                    );
+                  },
+                );
+              } else {
+                setState(
+                  () {
+                    cartVM.selectedItems.addAll(
+                      {widget.index: 1},
+                    );
+                  },
+                );
+              }
+            },
+            checkColor: AppColors.whiteColor,
+            activeColor: AppColors.lightRed,
           ),
           SizedBox(
             width: 15.0,
@@ -76,17 +101,38 @@ class _CartItemWidgetState extends State<CartItemWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              setState(
+                                () {
+                                  cartVM.selectedItems.update(
+                                    widget.index,
+                                    (int value) =>
+                                        value > 1 ? value - 1 : value,
+                                  );
+                                },
+                              );
+                            },
                             child: Icon(
                               Icons.remove,
                               size: 20.0,
                             ),
                           ),
                           Text(
-                            '2',
+                            cartVM.selectedItems[widget.index] != null
+                                ? cartVM.selectedItems[widget.index].toString()
+                                : '0',
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              setState(
+                                () {
+                                  cartVM.selectedItems.update(
+                                    widget.index,
+                                    (int value) => value + 1,
+                                  );
+                                },
+                              );
+                            },
                             child: Icon(
                               Icons.add,
                               size: 26.0,

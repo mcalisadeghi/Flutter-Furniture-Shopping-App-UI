@@ -54,6 +54,7 @@ class _CartviewState extends State<Cartview> {
               itemBuilder: (BuildContext context, int index) {
                 return CartItemWidget(
                   productModel: DummyProductList.cartList[index],
+                  index: index,
                 );
               },
             ),
